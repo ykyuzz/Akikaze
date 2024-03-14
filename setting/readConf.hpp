@@ -22,12 +22,12 @@ class setting{
     void setSettingFilePath(std::string path);
     //FOR GETTING ENTIRE SETTINGS
     void defineEntireSetting();
-    void getEntireSetting();
+    std::map<std::string, std::string> getEntireSetting();
     void releaseMemoryOfEntireSetting();
     //FOR GETTING ONT OF SETTINGS
-    void setSettingTitle();
+    void setSettingTitle(std::string title);
     void defineSettingValue();
-    void getSettingValue();
+    std::string getSettingValue();
 };
 
 #endif //READCONF_HPP

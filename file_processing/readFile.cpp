@@ -58,7 +58,7 @@ int csv_file_contents_::deployCSVFileContentsToTwoDimVector(){
             std::vector<std::string> vec;
             while(end_index + 1 < length_of_onedim_array_column){
                 if(element[end_index] == break_letter){
-                    vec.push_back(element.substr(start_index, end_index - start_index));
+                    vec.push_back(element.substr(start_index, end_index - start_index - 1));
                     start_index = end_index + 1;
                 }
                 end_index++;
