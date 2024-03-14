@@ -8,16 +8,18 @@
 
 int main(){}
 
-void setting::setSettingFilePath(std::string path){
+
+void setting_::setSettingFilePath(std::string path){
     setting_file_path = path;
 }
 
-void setting::defineEntireSetting(){
+
+void setting_::defineEntireSetting(){
     std::ifstream ifs(setting_file_path);
     std::string row;
     std::string key;
     std::string value;
-    char break_letter = ':';
+    char break_letter = '=';
 
     unsigned int start_index = 0;
     unsigned int end_index;
@@ -39,19 +41,33 @@ void setting::defineEntireSetting(){
     }
 }
 
-std::map<std::string, std::string> setting::getEntireSetting(){
+
+std::map<std::string, std::string>setting_::getEntireSetting(){
     return entire_setting;
 }
 
-void setting::releaseMemoryOfEntireSetting(){
+
+std::string setting_::getCertainSettingFromEntireSetting(std::string key){
+    return entire_setting[key];
+}
+
+int setting_::getCastedToIntSettingFromEntireSetting(std::string key){
+    int v = std::stoi(entire_setting[key]);
+    return v;
+}
+
+
+void setting_::releaseMemoryOfEntireSetting(){
     entire_setting.clear();
 }
 
-void setting::setSettingTitle(std::string title){
+
+void setting_::setSettingTitle(std::string title){
     setting_title = title;
 }
 
-void setting::defineSettingValue(){
+
+void setting_::defineSettingValue(){
     std::ifstream ifs(setting_file_path);
     std::string row;
     std::string value;
@@ -63,6 +79,9 @@ void setting::defineSettingValue(){
 
     if(!ifs.fail()){
         while(getline(ifs, row)){
+            if(row[0] == '#'){
+                continue;
+            }
             row_length = row.size();
             for(unsigned int i=0;i<row_length;i++){
                 if(row[i] == break_letter){
@@ -79,6 +98,7 @@ void setting::defineSettingValue(){
     }
 }
 
-std::string setting::getSettingValue(){
+
+std::string setting_::getSettingValue(){
     return setting_value;
 }

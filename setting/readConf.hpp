@@ -3,11 +3,10 @@
 
 #include <stdio.h>
 #include <fstream>
-#include <vector>
 #include <string>
 #include <map>
 
-class setting{
+class setting_{
     private:
     //FOR DEMAND THAT ENTIRE CONFIGRATION DATA IS REQUIRED
     std::map<std::string, std::string> entire_setting;
@@ -20,10 +19,14 @@ class setting{
     public:
     //FOR ALL
     void setSettingFilePath(std::string path);
+
     //FOR GETTING ENTIRE SETTINGS
     void defineEntireSetting();
     std::map<std::string, std::string> getEntireSetting();
+    std::string getCertainSettingFromEntireSetting(std::string key);
+    int getCastedToIntSettingFromEntireSetting(std::string key);
     void releaseMemoryOfEntireSetting();
+
     //FOR GETTING ONT OF SETTINGS
     void setSettingTitle(std::string title);
     void defineSettingValue();
