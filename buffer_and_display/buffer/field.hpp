@@ -12,11 +12,12 @@ class field{
     unsigned int NUMBER_OF_LETTERS_IN_COLUMN;
     unsigned int NUMBER_OF_SPACE_BETWEEN_COLUMNS;
 
-    bool setup_sig;
-
-    void setUp();
+    char** field_p = new char*[NUMBER_OF_ROW + 1];
 
     public:
+    field();
+    ~field();
+    
 };
 
 #endif //FIELD_HPP
