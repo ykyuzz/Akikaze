@@ -8,7 +8,7 @@
 int main(){}
 
 //constructor
-field::field(){
+ field_::field_(){
     setting_ setting;
     setting.setSettingFilePath("../setting/setting.conf"); //!
     setting.defineEntireSetting();
@@ -21,24 +21,13 @@ field::field(){
     IS_SHOWING_ROW_NUMBER = setting.getCastedToIntSettingFromEntireSetting("IS_SHOWING_ROW_NUMBER");
 
     for(size_t i=0;i<NUMBER_OF_ROW;i++){
-        field_p[i] = new char[(NUMBER_OF_LETTERS_IN_COLUMN + NUMBER_OF_SPACE_BETWEEN_COLUMNS)*NUMBER_OF_COLUMN + 1];
+        field[i] = new char[(NUMBER_OF_LETTERS_IN_COLUMN + NUMBER_OF_SPACE_BETWEEN_COLUMNS)*NUMBER_OF_COLUMN + 1];
     }
 
     setting.releaseMemoryOfEntireSetting();
 }
 
 //destructor
-field::~field() noexcept{
-    delete field_p;
-}
-
-void field::displayField(){
-    char filling_letter;
-
-    if(IS_ZENKAKU_BASED){
-        filling_letter = '　';
-    } else {
-        filling_letter = ' ';
-    }
-
+field_::~field_() noexcept{
+    delete[] field;
 }

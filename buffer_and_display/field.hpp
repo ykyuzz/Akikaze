@@ -6,8 +6,8 @@
 #include <string>
 #include <vector>
 
-class field{
-    private:
+class field_{
+    protected:
     unsigned int NUMBER_OF_ROW;
     unsigned int NUMBER_OF_COLUMN;
     unsigned int NUMBER_OF_LETTERS_IN_COLUMN;
@@ -16,13 +16,12 @@ class field{
     bool IS_SHOWING_COLUMN_NUMBER;
     bool IS_SHOWING_ROW_NUMBER;
 
-    char** field_p = new char*[NUMBER_OF_ROW + 1];
+    char** field = new char*[NUMBER_OF_ROW + 1];
     std::vector<std::vector<std::string>> contents;
 
     public:
-    field();
-    ~field();
-    void displayField();
+    field_();
+    ~field_();
 };
 
 #endif //FIELD_HPP
