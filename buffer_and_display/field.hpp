@@ -12,6 +12,8 @@ class field_{
     unsigned int NUMBER_OF_COLUMN;
     unsigned int NUMBER_OF_LETTERS_IN_COLUMN;
     unsigned int NUMBER_OF_SPACE_BETWEEN_COLUMNS;
+    unsigned int START_ROW_POSITION;
+    unsigned int START_COLUMN_POSITION;
     bool IS_ZENKAKU_BASED;
     bool IS_SHOWING_COLUMN_NUMBER;
     bool IS_SHOWING_ROW_NUMBER;

@@ -27,15 +27,18 @@ std::string display_::fillLettersIntoColumn(std::string element){
     return element;
 }
 
-
 void display_::setContentsToDisplay(){
     std::string row;
     int row_pos;
     int column_pos;
+    std::string write_ele;
 
     for(int i=0;i<NUMBER_OF_ROW;i++){
+        row_pos =START_ROW_POSITION + i;
         for(int j=0;j<NUMBER_OF_COLUMN;j++){
-
+            column_pos = START_COLUMN_POSITION + j;
+            write_ele = fillLettersIntoColumn(contents[i][j]);
+            
         }
     }
 }
