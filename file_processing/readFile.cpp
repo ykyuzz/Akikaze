@@ -1,4 +1,5 @@
 #include "readFile.hpp"
+#include "../setting/setting.hpp"
 
 #include <fstream>
 #include <vector>
@@ -6,7 +7,17 @@
 
 /*READ CSV FILE*/
 
-int main(){}
+ int main(){}
+
+
+csv_file_contents_::csv_file_contents_(std::string filepath){
+    file_path = filepath;
+    setting_ st("../setting/setting.conf");
+    st.setSettingTitle("MAXIMUM_NUMBER_OF_ROW_IN_FILES");
+    st.defineSettingValue();
+    MAXIMUM_NUMBER_OF_ROW_IN_FILES = st.getCastedToIntSettingFromCertainSetting();
+}
+
 
 size_t csv_file_contents_::getFileLength(){
     std::ifstream ifs(file_path, std::ios_base::binary);

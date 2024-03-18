@@ -1,5 +1,5 @@
-#ifndef READCONF_HPP
-#define READCONF_HPP
+#ifndef SETTING_HPP
+#define SETTING_HPP
 
 #include <stdio.h>
 #include <fstream>
@@ -18,6 +18,8 @@ class setting_{
 
     public:
     //FOR ALL
+    setting_(std::string path);
+
     void setSettingFilePath(std::string path);
 
     //FOR GETTING ENTIRE SETTINGS
@@ -30,7 +32,8 @@ class setting_{
     //FOR GETTING ONT OF SETTINGS
     void setSettingTitle(std::string title);
     void defineSettingValue();
+    int getCastedToIntSettingFromCertainSetting();
     std::string getSettingValue();
 };
 
-#endif //READCONF_HPP
+#endif //SETTING_HPP

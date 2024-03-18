@@ -1,4 +1,4 @@
-#include "readConf.hpp"
+#include "setting.hpp"
 
 #include <stdio.h>
 #include <fstream>
@@ -6,7 +6,13 @@
 #include <string>
 #include <map>
 
+
 int main(){}
+
+
+setting_::setting_(std::string path){
+    setSettingFilePath(path);
+}
 
 
 void setting_::setSettingFilePath(std::string path){
@@ -101,4 +107,10 @@ void setting_::defineSettingValue(){
 
 std::string setting_::getSettingValue(){
     return setting_value;
+}
+
+
+int setting_::getCastedToIntSettingFromCertainSetting(){
+    int v = std::stoi(setting_value);
+    return v;
 }

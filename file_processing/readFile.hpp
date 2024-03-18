@@ -12,12 +12,13 @@ class csv_file_contents_{
     std::vector<std::vector<std::string>> csv_contents_two_dim;
     std::string file_path;
 
-    const unsigned int MAXIMUM_NUMBER_OF_ROW_IN_FILES;
+    unsigned int MAXIMUM_NUMBER_OF_ROW_IN_FILES;
 
     size_t getFileLength();
     int defineCsv_contents_one_dim();
 
     public:
+    csv_file_contents_(std::string filepath);
     int deployCSVFileContentsToOneDimVector();
     int deployCSVFileContentsToTwoDimVector();
     std::vector<std::string> getOneDimCSVVector();

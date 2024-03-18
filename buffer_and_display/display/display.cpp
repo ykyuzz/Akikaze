@@ -1,4 +1,4 @@
-#include "../setting/readConf.hpp"
+#include "../setting/setting.hpp"
 #include "../field.hpp"
 #include "../buffer/buffer.hpp"
 
@@ -27,7 +27,7 @@ std::string display_::fillLettersIntoColumn(std::string element){
     return element;
 }
 
-void display_::setContentsToDisplay(){
+void display_::setFieldToDisplay(){
     std::string row;
     int row_pos;
     int column_pos;
@@ -37,8 +37,8 @@ void display_::setContentsToDisplay(){
         row_pos =START_ROW_POSITION + i;
         for(int j=0;j<NUMBER_OF_COLUMN;j++){
             column_pos = START_COLUMN_POSITION + j;
-            write_ele = fillLettersIntoColumn(contents[i][j]);
-            
+            write_ele = fillLettersIntoColumn(contents[row_pos][column_pos]);
+
         }
     }
 }

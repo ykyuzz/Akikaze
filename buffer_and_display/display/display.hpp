@@ -10,15 +10,18 @@
 #include <vector>
 #include <array>
 
-class display_ : public field_{
+class display_ : public buffer_{
     private:
     std::string fillLettersIntoColumn(std::string element);
     std::vector<std::string> display;
+    
+    unsigned int row_position_of_starting_displaying_contents;
+    unsigned int column_position_of_starting_displaying_contents;
 
     std::string mkSpace();
 
     public:
-    void setContentsToDisplay();
+    void setFieldToDisplay();
     void showDisplay();
 
 };

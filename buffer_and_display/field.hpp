@@ -11,7 +11,7 @@ class field_{
     unsigned int NUMBER_OF_ROW;
     unsigned int NUMBER_OF_COLUMN;
     unsigned int NUMBER_OF_LETTERS_IN_COLUMN;
-    unsigned int NUMBER_OF_SPACE_BETWEEN_COLUMNS;
+    unsigned int NUMBER_OF_LETTER_OF_SPACE_BETWEEN_COLUMNS;
     unsigned int START_ROW_POSITION;
     unsigned int START_COLUMN_POSITION;
     bool IS_ZENKAKU_BASED;
@@ -20,6 +20,9 @@ class field_{
 
     char** field = new char*[NUMBER_OF_ROW + 1];
     std::vector<std::vector<std::string>> contents;
+
+    unsigned int current_row_cursor_pos;
+    unsigned int current_column_cursor_pos;
 
     public:
     field_();
